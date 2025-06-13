@@ -1,0 +1,115 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "9a3b9251-4057-4ced-8b05-281f9e280708",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "UnicodeDecodeError",
+     "evalue": "'utf-8' codec can't decode byte 0xa0 in position 2944: invalid start byte",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mUnicodeDecodeError\u001b[0m                        Traceback (most recent call last)",
+      "Cell \u001b[0;32mIn[4], line 48\u001b[0m\n\u001b[1;32m     46\u001b[0m \u001b[38;5;66;03m# Example usage\u001b[39;00m\n\u001b[1;32m     47\u001b[0m data \u001b[38;5;241m=\u001b[39m \u001b[38;5;124m'\u001b[39m\u001b[38;5;124m/Users/manas/Downloads/task 8 superstore data.csv\u001b[39m\u001b[38;5;124m'\u001b[39m\n\u001b[0;32m---> 48\u001b[0m df \u001b[38;5;241m=\u001b[39m pd\u001b[38;5;241m.\u001b[39mread_csv(data)\n\u001b[1;32m     50\u001b[0m df \u001b[38;5;241m=\u001b[39m pd\u001b[38;5;241m.\u001b[39mDataFrame(data)\n\u001b[1;32m     51\u001b[0m \u001b[38;5;28mprint\u001b[39m(\u001b[38;5;124m'\u001b[39m\u001b[38;5;124mBefore Preprocessing:\u001b[39m\u001b[38;5;130;01m\\n\u001b[39;00m\u001b[38;5;124m'\u001b[39m, df)\n",
+      "File \u001b[0;32m/opt/anaconda3/lib/python3.11/site-packages/pandas/io/parsers/readers.py:948\u001b[0m, in \u001b[0;36mread_csv\u001b[0;34m(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)\u001b[0m\n\u001b[1;32m    935\u001b[0m kwds_defaults \u001b[38;5;241m=\u001b[39m _refine_defaults_read(\n\u001b[1;32m    936\u001b[0m     dialect,\n\u001b[1;32m    937\u001b[0m     delimiter,\n\u001b[0;32m   (...)\u001b[0m\n\u001b[1;32m    944\u001b[0m     dtype_backend\u001b[38;5;241m=\u001b[39mdtype_backend,\n\u001b[1;32m    945\u001b[0m )\n\u001b[1;32m    946\u001b[0m kwds\u001b[38;5;241m.\u001b[39mupdate(kwds_defaults)\n\u001b[0;32m--> 948\u001b[0m \u001b[38;5;28;01mreturn\u001b[39;00m _read(filepath_or_buffer, kwds)\n",
+      "File \u001b[0;32m/opt/anaconda3/lib/python3.11/site-packages/pandas/io/parsers/readers.py:611\u001b[0m, in \u001b[0;36m_read\u001b[0;34m(filepath_or_buffer, kwds)\u001b[0m\n\u001b[1;32m    608\u001b[0m _validate_names(kwds\u001b[38;5;241m.\u001b[39mget(\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mnames\u001b[39m\u001b[38;5;124m\"\u001b[39m, \u001b[38;5;28;01mNone\u001b[39;00m))\n\u001b[1;32m    610\u001b[0m \u001b[38;5;66;03m# Create the parser.\u001b[39;00m\n\u001b[0;32m--> 611\u001b[0m parser \u001b[38;5;241m=\u001b[39m TextFileReader(filepath_or_buffer, \u001b[38;5;241m*\u001b[39m\u001b[38;5;241m*\u001b[39mkwds)\n\u001b[1;32m    613\u001b[0m \u001b[38;5;28;01mif\u001b[39;00m chunksize \u001b[38;5;129;01mor\u001b[39;00m iterator:\n\u001b[1;32m    614\u001b[0m     \u001b[38;5;28;01mreturn\u001b[39;00m parser\n",
+      "File \u001b[0;32m/opt/anaconda3/lib/python3.11/site-packages/pandas/io/parsers/readers.py:1448\u001b[0m, in \u001b[0;36mTextFileReader.__init__\u001b[0;34m(self, f, engine, **kwds)\u001b[0m\n\u001b[1;32m   1445\u001b[0m     \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39moptions[\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mhas_index_names\u001b[39m\u001b[38;5;124m\"\u001b[39m] \u001b[38;5;241m=\u001b[39m kwds[\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mhas_index_names\u001b[39m\u001b[38;5;124m\"\u001b[39m]\n\u001b[1;32m   1447\u001b[0m \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39mhandles: IOHandles \u001b[38;5;241m|\u001b[39m \u001b[38;5;28;01mNone\u001b[39;00m \u001b[38;5;241m=\u001b[39m \u001b[38;5;28;01mNone\u001b[39;00m\n\u001b[0;32m-> 1448\u001b[0m \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39m_engine \u001b[38;5;241m=\u001b[39m \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39m_make_engine(f, \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39mengine)\n",
+      "File \u001b[0;32m/opt/anaconda3/lib/python3.11/site-packages/pandas/io/parsers/readers.py:1723\u001b[0m, in \u001b[0;36mTextFileReader._make_engine\u001b[0;34m(self, f, engine)\u001b[0m\n\u001b[1;32m   1720\u001b[0m     \u001b[38;5;28;01mraise\u001b[39;00m \u001b[38;5;167;01mValueError\u001b[39;00m(msg)\n\u001b[1;32m   1722\u001b[0m \u001b[38;5;28;01mtry\u001b[39;00m:\n\u001b[0;32m-> 1723\u001b[0m     \u001b[38;5;28;01mreturn\u001b[39;00m mapping[engine](f, \u001b[38;5;241m*\u001b[39m\u001b[38;5;241m*\u001b[39m\u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39moptions)\n\u001b[1;32m   1724\u001b[0m \u001b[38;5;28;01mexcept\u001b[39;00m \u001b[38;5;167;01mException\u001b[39;00m:\n\u001b[1;32m   1725\u001b[0m     \u001b[38;5;28;01mif\u001b[39;00m \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39mhandles \u001b[38;5;129;01mis\u001b[39;00m \u001b[38;5;129;01mnot\u001b[39;00m \u001b[38;5;28;01mNone\u001b[39;00m:\n",
+      "File \u001b[0;32m/opt/anaconda3/lib/python3.11/site-packages/pandas/io/parsers/c_parser_wrapper.py:93\u001b[0m, in \u001b[0;36mCParserWrapper.__init__\u001b[0;34m(self, src, **kwds)\u001b[0m\n\u001b[1;32m     90\u001b[0m \u001b[38;5;28;01mif\u001b[39;00m kwds[\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mdtype_backend\u001b[39m\u001b[38;5;124m\"\u001b[39m] \u001b[38;5;241m==\u001b[39m \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mpyarrow\u001b[39m\u001b[38;5;124m\"\u001b[39m:\n\u001b[1;32m     91\u001b[0m     \u001b[38;5;66;03m# Fail here loudly instead of in cython after reading\u001b[39;00m\n\u001b[1;32m     92\u001b[0m     import_optional_dependency(\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mpyarrow\u001b[39m\u001b[38;5;124m\"\u001b[39m)\n\u001b[0;32m---> 93\u001b[0m \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39m_reader \u001b[38;5;241m=\u001b[39m parsers\u001b[38;5;241m.\u001b[39mTextReader(src, \u001b[38;5;241m*\u001b[39m\u001b[38;5;241m*\u001b[39mkwds)\n\u001b[1;32m     95\u001b[0m \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39munnamed_cols \u001b[38;5;241m=\u001b[39m \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39m_reader\u001b[38;5;241m.\u001b[39munnamed_cols\n\u001b[1;32m     97\u001b[0m \u001b[38;5;66;03m# error: Cannot determine type of 'names'\u001b[39;00m\n",
+      "File \u001b[0;32mparsers.pyx:579\u001b[0m, in \u001b[0;36mpandas._libs.parsers.TextReader.__cinit__\u001b[0;34m()\u001b[0m\n",
+      "File \u001b[0;32mparsers.pyx:668\u001b[0m, in \u001b[0;36mpandas._libs.parsers.TextReader._get_header\u001b[0;34m()\u001b[0m\n",
+      "File \u001b[0;32mparsers.pyx:879\u001b[0m, in \u001b[0;36mpandas._libs.parsers.TextReader._tokenize_rows\u001b[0;34m()\u001b[0m\n",
+      "File \u001b[0;32mparsers.pyx:890\u001b[0m, in \u001b[0;36mpandas._libs.parsers.TextReader._check_tokenize_status\u001b[0;34m()\u001b[0m\n",
+      "File \u001b[0;32mparsers.pyx:2050\u001b[0m, in \u001b[0;36mpandas._libs.parsers.raise_parser_error\u001b[0;34m()\u001b[0m\n",
+      "\u001b[0;31mUnicodeDecodeError\u001b[0m: 'utf-8' codec can't decode byte 0xa0 in position 2944: invalid start byte"
+     ]
+    }
+   ],
+   "source": [
+    "import pandas as pd\n",
+    "from sklearn.preprocessing import LabelEncoder\n",
+    "import numpy as np\n",
+    "\n",
+    "# Function to drop duplicates\n",
+    "def drop_duplicates(df, subset_name):\n",
+    "    df.drop_duplicates(subset=[subset_name], inplace=True)\n",
+    "    return df\n",
+    "\n",
+    "# Function to encode categorical variables\n",
+    "def encode(df, column_to_encode):\n",
+    "    le = LabelEncoder()\n",
+    "    df[column_to_encode] = le.fit_transform(df[column_to_encode])\n",
+    "    return df\n",
+    "\n",
+    "# Function to handle outliers\n",
+    "def outlier_handling(df, column_with_outliers):\n",
+    "    q1 = df[column_with_outliers].quantile(0.25)\n",
+    "    q3 = df[column_with_outliers].quantile(0.75)\n",
+    "    iqr = q3 - q1\n",
+    "    df = df[(df[column_with_outliers] > (q1 - 1.5 * iqr)) & (df[column_with_outliers] < (q3 + 1.5 * iqr))]\n",
+    "    return df\n",
+    "\n",
+    "# Function to format date columns\n",
+    "def date_formatting(df, column_with_date):\n",
+    "    df[column_with_date] = pd.to_datetime(df[column_with_date], format='%m/%d/%Y')\n",
+    "    return df\n",
+    "\n",
+    "# Function to remove missing values\n",
+    "def remove_missing_values(df):\n",
+    "    missing_values = df.isnull().sum()\n",
+    "    df = df.dropna()\n",
+    "    print(\"Removed {} missing values\".format(missing_values.sum()))\n",
+    "    return df\n",
+    "\n",
+    "# Main data cleaning pipeline function\n",
+    "def data_cleaning_pipeline(df_path, duplication_subset, column_to_encode, column_with_outliers, column_with_date):\n",
+    "    df = pd.read_csv(df_path)\n",
+    "    df_no_duplicates = drop_duplicates(df, duplication_subset)\n",
+    "    df_encoded = encode(df_no_duplicates, column_to_encode)\n",
+    "    df_no_outliers = outlier_handling(df_encoded, column_with_outliers)\n",
+    "    df_date_formatted = date_formatting(df_no_outliers, column_with_date)\n",
+    "    df_no_nulls = remove_missing_values(df_date_formatted)\n",
+    "    return df_no_nulls\n",
+    "\n",
+    "# Example usage\n",
+    "data = '/Users/manas/Downloads/task 8 superstore data.csv'\n",
+    "df = pd.read_csv(data)\n",
+    "\n",
+    "df = pd.DataFrame(data)\n",
+    "print('Before Preprocessing:\\n', df)\n",
+    "\n",
+    "# Save DataFrame as CSV file\n",
+    "df.to_csv('my_data.csv', index=False)\n",
+    "\n",
+    "clean_df = data_cleaning_pipeline('my_data.csv', 'Name', 'Gender', 'Income', 'Birthdate')\n",
+    "\n",
+    "print('\\nAfter preprocessing')\n",
+    "print(clean_df.head())\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.7"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
